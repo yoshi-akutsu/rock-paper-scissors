@@ -6,6 +6,19 @@
     </head>
     <body>
         <script>
+            function computerPlay(){
+                let hand = Math.random()
+                if (hand >= .66){
+                    hand = "rock"
+                }
+                else if (hand <= .33){
+                    hand = "paper"
+                }
+                else{
+                    hand = "scissors"
+                }
+                return hand
+            }
             
             
         </script>
