@@ -69,7 +69,34 @@
                 }
                 return result
             }
-
+            function game(){
+                let tally = [0, 0, 0]
+                for (var i = 0; i < 5; i++) {
+                    userPlay = window.prompt("Rock, paper, or scissors")                  
+                    winner = playRound(userPlay, computerPlay())
+                    if (winner.substring(0, 5) == "You w"){
+                        tally[0] += 1
+                        console.log(winner)
+                    }
+                    else if (winner.substring(0, 5) == "You l"){
+                        tally[1] += 1
+                        console.log(winner)
+                    }
+                    else{
+                        tally[2] += 1
+                        console.log(winner)
+                    }
+                }
+                if (tally[0] > tally[1]){
+                    console.log("You won!")
+                }
+                else if (tally[1] > tally[0]){
+                    console.log("You lost.")
+                }
+                else {
+                    console.log("It was a draw.")
+                }
+            }
         </script>
     </body>
 </html>
