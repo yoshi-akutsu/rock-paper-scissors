@@ -19,8 +19,57 @@
                 }
                 return hand
             }
-            
-            
+            function playRound(userPlay, computerPlay){
+                let result = ""
+                if (computerPlay == "rock"){
+                    switch (userPlay){
+                        case "rock":
+                             result = "It's a tie: rock & rock"
+                            break;
+                        case "paper":
+                            result = "You win: paper beats rock"
+                            break;
+                        case "scissors":
+                            result = "You lose: rock beats scissors"
+                            break;
+                        default: 
+                            result = "It's ROCK PAPER SCISSORS silly. Pick one only."
+                        }
+                }
+                else if (computerPlay == "paper"){
+                    switch (userPlay){
+                        case "rock":
+                             result = "You lose: paper beats rock"
+                            break;
+                        case "paper":
+                            result = "It's a tie: paper & paper"
+                            break;
+                        case "scissors":
+                            result = "You win: scissors beats paper"
+                            break;
+                        default: 
+                            result = "It's ROCK PAPER SCISSORS silly. Pick one only."
+                        }
+
+                }
+                else {
+                    switch (userPlay){
+                        case "rock":
+                             result = "You win: rock beats scissors"
+                            break;
+                        case "paper":
+                            result = "You lose: scissors beats paper"
+                            break;
+                        case "scissors":
+                            result = "It's a tie: scissors & scissors"
+                            break;
+                        default: 
+                            result = "It's ROCK PAPER SCISSORS silly. Pick one only."
+                }
+                }
+                return result
+            }
+
         </script>
     </body>
 </html>
