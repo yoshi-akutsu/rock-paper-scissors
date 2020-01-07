@@ -5,99 +5,13 @@
         <title>Rock, Paper, Scissors</title>
     </head>
     <body>
-        <h1>最初はグー…</h1>    
-        <script>
-            function computerPlay(){
-                let hand = Math.random()
-                if (hand >= .66){
-                    hand = "rock"
-                }
-                else if (hand <= .33){
-                    hand = "paper"
-                }
-                else{
-                    hand = "scissors"
-                }
-                return hand
-            }
-            function playRound(userPlay, computerPlay){
-                let result = ""
-                if (computerPlay == "rock"){
-                    switch (userPlay){
-                        case "rock":
-                             result = "It's a tie: rock & rock"
-                            break;
-                        case "paper":
-                            result = "You win: paper beats rock"
-                            break;
-                        case "scissors":
-                            result = "You lose: rock beats scissors"
-                            break;
-                        default: 
-                            result = "It's ROCK PAPER SCISSORS silly. Pick one only."
-                        }
-                }
-                else if (computerPlay == "paper"){
-                    switch (userPlay){
-                        case "rock":
-                             result = "You lose: paper beats rock"
-                            break;
-                        case "paper":
-                            result = "It's a tie: paper & paper"
-                            break;
-                        case "scissors":
-                            result = "You win: scissors beats paper"
-                            break;
-                        default: 
-                            result = "It's ROCK PAPER SCISSORS silly. Pick one only."
-                        }
-
-                }
-                else {
-                    switch (userPlay){
-                        case "rock":
-                             result = "You win: rock beats scissors"
-                            break;
-                        case "paper":
-                            result = "You lose: scissors beats paper"
-                            break;
-                        case "scissors":
-                            result = "It's a tie: scissors & scissors"
-                            break;
-                        default: 
-                            result = "It's ROCK PAPER SCISSORS silly. Pick one only."
-                }
-                }
-                return result
-            }
-            function game(){
-                let tally = [0, 0, 0]
-                for (var i = 0; i < 5; i++) {
-                    userPlay = window.prompt("Rock, paper, or scissors")                  
-                    winner = playRound(userPlay, computerPlay())
-                    if (winner.substring(0, 5) == "You w"){
-                        tally[0] += 1
-                        console.log(winner)
-                    }
-                    else if (winner.substring(0, 5) == "You l"){
-                        tally[1] += 1
-                        console.log(winner)
-                    }
-                    else{
-                        tally[2] += 1
-                        console.log(winner)
-                    }
-                }
-                if (tally[0] > tally[1]){
-                    console.log("You won!")
-                }
-                else if (tally[1] > tally[0]){
-                    console.log("You lost.")
-                }
-                else {
-                    console.log("It was a draw.")
-                }
-            }
-        </script>
+        <h1>最初はグー…</h1>   
+        <button id="rock">グー</button> 
+        <button id="paper">パ</button> 
+        <button id="scissors">チョキ</button> 
+        <div id="score"></div>
+        <div id="results"></div>
+        <button id="restart">Restart</button> 
+        <script src="janken.js"></script>
     </body>
 </html>
